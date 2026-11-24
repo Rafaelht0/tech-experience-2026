@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Experience 2026 | Inscrição em Oficinas</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Tech Experience 2026</h1>
+    <p>Inscrição nas oficinas técnicas do evento</p>
+  </header>
+
+  <main class="container">
+    <form id="form-inscricao" class="card" action="processar.php" method="post" novalidate>
+      <h2>Formulário de Inscrição</h2>
+
+      <div class="campo">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" name="nome" required minlength="3" autocomplete="name">
+        <p class="error-message" id="erro-nome" hidden></p>
+      </div>
+
+      <div class="campo">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+        <p class="error-message" id="erro-email" hidden></p>
+      </div>
+
+      <div class="campo">
+        <label for="experiencia">Nível de experiência</label>
+        <select id="experiencia" name="experiencia" required>
+          <option value="">Selecione...</option>
+          <option value="iniciante">Iniciante</option>
+          <option value="intermediario">Intermediário</option>
+          <option value="avancado">Avançado</option>
+        </select>
+        <p class="error-message" id="erro-experiencia" hidden></p>
+      </div>
+
+      <fieldset class="campo grupo" id="grupo-turno">
+        <legend>Turno de preferência</legend>
+        <div class="opcoes">
+          <label for="turno-manha"><input type="radio" id="turno-manha" name="turno" value="manha" required> Manhã</label>
+          <label for="turno-noite"><input type="radio" id="turno-noite" name="turno" value="noite"> Noite</label>
+        </div>
+        <p class="error-message" id="erro-turno" hidden></p>
+      </fieldset>
+
+      <fieldset class="campo grupo" id="grupo-oficinas">
+        <legend>Oficinas de interesse</legend>
+        <div class="opcoes">
+          <label for="of-html"><input type="checkbox" id="of-html" name="oficinas[]" value="html_css"> HTML &amp; CSS</label>
+          <label for="of-js"><input type="checkbox" id="of-js" name="oficinas[]" value="js_dom"> JavaScript &amp; DOM</label>
+          <label for="of-php"><input type="checkbox" id="of-php" name="oficinas[]" value="php_backend"> PHP Backend</label>
+        </div>
+        <p class="error-message" id="erro-oficinas" hidden></p>
+      </fieldset>
+
+      <div class="campo">
+        <label for="mensagem">Mensagem / Motivação</label>
+        <textarea id="mensagem" name="mensagem" maxlength="200" rows="4" aria-describedby="contador"></textarea>
+        <p id="contador" class="contador" aria-live="polite">Restam 200 caracteres</p>
+      </div>
+
+      <button type="submit" class="btn">Enviar inscrição</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>Tech Experience 2026 · Desenvolvimento Web</p>
+  </footer>
+</body>
+</html>
